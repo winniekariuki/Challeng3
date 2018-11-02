@@ -49,7 +49,7 @@ def token_required(f):
 class UserAccount(Resource):
     @expects_json(signup_schema)
     @token_required
-    def post(user_data,self):
+    def post(self):
         if user_data["role"] != "Admin":
             return make_response(jsonify({
                 "message": "Not authorized"
@@ -106,17 +106,17 @@ class LoginUser(Resource):
         data = request.get_json()
         username = data["username"]
         password = data["password"]
-
         if not data or not username or not password:
             return make_response(jsonify({
                                          'Status': 'Failed',
                                          'Message': "Enter credentials"
                                          }), 400)
-
+        
+        print(username)
+        print(self.user_ins)
         for user in self.user_ins:
-            print(user)
             if user['username'] == username and check_password_hash(user['password'], password):
-
+                
                 token = jwt.encode({'username': user['username'],
                                     'exp': datetime.datetime.utcnow() +
                                     datetime.timedelta(minutes=30)},
