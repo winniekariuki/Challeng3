@@ -10,8 +10,8 @@ if 'pytest' in modules:
         return connection
 else:
     def dbconn():
-        connection = psycopg2.connect(host="localhost",user="postgres",dbname="storemanager",password="1234")
-
+        connection = psycopg2.connect(
+                os.environ['DATABASE_URL'], sslmode='require')
         return connection
 
 def create_tables():
