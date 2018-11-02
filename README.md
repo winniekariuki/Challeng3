@@ -1,6 +1,8 @@
 # Challeng3
-Store Manager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store.
 [![Build Status](https://travis-ci.org/winniekariuki/Challeng3.svg?branch=master)](https://travis-ci.org/winniekariuki/Challeng3)
+
+Store Manager is a web application that helps store owners manage sales and product inventory records. This application is meant for use in a single store.
+
 
 <h2>Sign up endpoint</h2>
 <p>Enables admin to sign up store attendant's users.
