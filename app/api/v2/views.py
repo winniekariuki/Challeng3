@@ -99,6 +99,7 @@ class UserAccount(Resource):
             "role": data["role"]
         }), 201)
 
+
 class LoginUser(Resource):
     @expects_json(login_schema)
     def post(self):
@@ -294,5 +295,8 @@ class SingleSaleRecord(Resource):
                         "MySaleRecords": sale
 
                     }), 200)
+
+        
+
 
         
