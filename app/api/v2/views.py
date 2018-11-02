@@ -29,7 +29,7 @@ def token_required(f):
 
         if not token:
             return make_response(jsonify({
-                "message": "Login!!"
+                "message": "Token required"
                 }), 401)
         try:
             data = jwt.decode(token, Config.SECRET_KEY)
@@ -83,14 +83,12 @@ class UserAccount(Resource):
         valid = Register()
         valid.space_validate(data)
         
-        admin = User(data)
-        admin.save_admin() 
+       
 
         user1 = User(data)
         print(user1)
         user1.save()
         # users = user1.get_users()
-
         return make_response(jsonify({
             "Status": "Ok",
             "Message": " registered successfully ",
