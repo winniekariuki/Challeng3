@@ -36,4 +36,7 @@ _Router used-'api/v2/sales/1' GET METHOD.</p>
 <div><h2>How to test</h2>
   <p>The endpoints can be tested through the postman by sending the link gotten from the terminal after running the app with the their respective routers</p>
   <p>To test if the tests pass you run the pytest command </p>
+  <div><h2>link</h2>
+    https://www.pivotaltracker.com/n/projects/2202841
+  </div>
 </div>
